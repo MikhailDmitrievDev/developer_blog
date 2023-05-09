@@ -12,7 +12,7 @@ RUN pip install --upgrade pip
 RUN apt update && apt -qy install gcc libjpeg-dev libxslt-dev \
     libpq-dev libmariadb-dev libmariadb-dev-compat gettext cron openssh-client flake8 locales vim
 
-RUN useradd -rms /bin/bash cb && chmod 777 /opt /run
+#RUN useradd -rms /bin/bash cb && chmod 777 /opt /run
 
 
 COPY . .
