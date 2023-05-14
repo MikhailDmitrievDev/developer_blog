@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     'src.profiles',
+    'src.board',
 
 ]
 

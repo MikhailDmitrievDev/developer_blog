@@ -5,14 +5,14 @@ from .models import UserBlog
 from .serializers import GetUserBlogSerializer, GetPublicUserBlogSerializer
 
 
-class UserBlogPublicView(ModelViewSet):
-    """Публичный вывод пользователя """
+class PublicUserBlogView(ModelViewSet):
+    """Public user view"""
     queryset = UserBlog.objects.all()
     serializer_class = GetPublicUserBlogSerializer
     permission_classes = [permissions.AllowAny]
 
 class UserBlogView(ModelViewSet):
-    """Вывод провиля пользователя."""
+    """Private user view."""
     serializer_class = GetUserBlogSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 

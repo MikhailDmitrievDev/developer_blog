@@ -4,7 +4,7 @@ from .models import UserBlog
 
 
 class GetUserBlogSerializer(serializers.ModelSerializer):
-    """ Вывод инофрмации о пользователе"""
+    """Personal user serializer"""
     class Meta:
         model = UserBlog
         exclude = ("password",
@@ -14,7 +14,7 @@ class GetUserBlogSerializer(serializers.ModelSerializer):
                    "is_superuser")
 
 class GetPublicUserBlogSerializer(serializers.ModelSerializer):
-    """Публичный вывод информации о пользователе."""
+    """Public user serializer."""
     class Meta:
         model = UserBlog
         exclude = ("password",
