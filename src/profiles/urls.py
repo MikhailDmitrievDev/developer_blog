@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('profile/<int:pk>/', views.UserBlogView.as_view({'get': 'retrieve', 'put': 'update'})),
-    path('<int:pk>/', views.UserBlogPublicView.as_view({'get': 'retrieve'})),
+    path('<int:pk>/', views.PublicUserBlogView.as_view({'get': 'retrieve'})),
 ]

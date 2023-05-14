@@ -18,3 +18,13 @@ class UserBlog(AbstractUser):
     github = models.CharField('Ссылка github', max_length=500, blank=True, null=True)
     birthday = models.DateTimeField(blank=True, null=True)
     gender = models.CharField('Пол', max_length=6, choices=GENDER_CHOICE, default='male')
+    technology = models.ManyToManyField('Technology', related_name='users')
+
+
+class Technology(models.Model):
+    """Модель технологий"""
+    name = models.CharField('Имя технологии.', max_length=200)
+
+    def __str__(self):
+        return self.name
+
